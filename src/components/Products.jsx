@@ -11,7 +11,7 @@ export default function Products() {
   } = useQuery(
     ['products', checked],
     async () => {
-      console.log('fetching..........');
+      console.log('fetching..........', checked);
       const res = await fetch(`data/${checked ? 'sale_' : ''}products.json`);
       return await res.json();
     },
